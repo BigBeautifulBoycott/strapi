@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_core_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "Website": {
+      "type": "string",
+      "regex": "^https?:\\/\\/[\\w.-]+\\.[a-z]{2,}([\\/\\w .-]*)*\\/?$"
+    },
+    "Wikipedia": {
+      "type": "string"
+    },
+    "Twitter": {
+      "type": "string"
+    },
+    "Facebook": {
+      "type": "string"
+    },
+    "Instagram": {
+      "type": "string"
+    },
+    "LinkedIn": {
+      "type": "string"
+    },
+    "GitHub": {
+      "type": "string"
+    },
+    "Crunchbase": {
+      "type": "string"
+    },
+    "TikTok": {
+      "type": "string"
+    },
+    "BlueSky": {
+      "type": "string"
+    },
+    "YouTube": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
