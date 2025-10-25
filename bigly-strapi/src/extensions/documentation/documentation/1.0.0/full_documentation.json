@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-25T21:29:06.745Z"
+    "x-generation-date": "2025-10-25T22:07:45.305Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -12904,11 +12904,11 @@
               "direct_contact_info": {
                 "$ref": "#/components/schemas/CommonContactInfoComponent"
               },
-              "blocklist_status": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SubjectSocialBlocklistComponent"
-                }
+              "blocklist": {
+                "type": "boolean"
+              },
+              "reasoning": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -13598,11 +13598,11 @@
           "direct_contact_info": {
             "$ref": "#/components/schemas/CommonContactInfoComponent"
           },
-          "blocklist_status": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubjectSocialBlocklistComponent"
-            }
+          "blocklist": {
+            "type": "boolean"
+          },
+          "reasoning": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -13803,11 +13803,11 @@
                 "direct_contact_info": {
                   "$ref": "#/components/schemas/CommonContactInfoComponent"
                 },
-                "blocklist_status": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SubjectSocialBlocklistComponent"
-                  }
+                "blocklist": {
+                  "type": "boolean"
+                },
+                "reasoning": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
@@ -13931,20 +13931,6 @@
             "type": "string"
           },
           "notes": {
-            "type": "string"
-          }
-        }
-      },
-      "SubjectSocialBlocklistComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "is_blocklisted": {
-            "type": "boolean"
-          },
-          "reasoning": {
             "type": "string"
           }
         }

@@ -8,7 +8,7 @@
   "attributes": {
     "is_blocklisted": {
       "type": "boolean",
-      "required": true
+      "required": false
     },
     "reasoning": {
       "type": "text"

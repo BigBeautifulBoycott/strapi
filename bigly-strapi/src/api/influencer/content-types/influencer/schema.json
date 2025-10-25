@@ -54,10 +54,21 @@
       "component": "common.contact-info",
       "repeatable": false
     },
-    "blocklist_status": {
-      "type": "component",
-      "component": "subject.social-blocklist",
-      "repeatable": true
+    "blocklist": {
+      "type": "boolean"
+    },
+    "reasoning": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "blocklist"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }
