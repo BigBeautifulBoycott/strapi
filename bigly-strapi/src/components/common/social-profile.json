@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_common_social_profiles",
+  "info": { "displayName": "Social Profile", "icon": "twitter", "description": "Social account or profile URL" },
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": ["website","twitter","facebook","instagram","linkedin","github","tiktok","bluesky","youtube","reddit","other"],
+      "default": "other"
+    },
+    "handle": { "type": "string" },
+    "url": { "type": "string" }
+  }
+}

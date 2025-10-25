@@ -563,12 +563,13 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
-  collectionName: 'companies';
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
   info: {
-    displayName: 'Company';
-    pluralName: 'companies';
-    singularName: 'company';
+    description: 'A tracked incident or action involving subjects';
+    displayName: 'Event';
+    pluralName: 'events';
+    singularName: 'event';
   };
   options: {
     draftAndPublish: true;
@@ -577,22 +578,10 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Identifiers: Schema.Attribute.Component<'core.identifier', true>;
-    Industry: Schema.Attribute.Enumeration<['Retail', 'Finance', 'Outdoors']>;
-    legal_name: Schema.Attribute.String;
-    links: Schema.Attribute.Component<'core.links', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::company.company'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
-    Locations: Schema.Attribute.Component<'core.location', true>;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    Rating: Schema.Attribute.Component<'core.rating', false>;
-    slug: Schema.Attribute.UID<'Name'>;
-    summary: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -625,6 +614,60 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvolvementInvolvement extends Struct.CollectionTypeSchema {
+  collectionName: 'involvements';
+  info: {
+    displayName: 'Involvement';
+    pluralName: 'involvements';
+    singularName: 'involvement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::involvement.involvement'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSubjectSubject extends Struct.CollectionTypeSchema {
+  collectionName: 'subjects';
+  info: {
+    displayName: 'Subject';
+    pluralName: 'subjects';
+    singularName: 'subject';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subject.subject'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1145,8 +1188,10 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
-      'api::company.company': ApiCompanyCompany;
+      'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
+      'api::involvement.involvement': ApiInvolvementInvolvement;
+      'api::subject.subject': ApiSubjectSubject;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

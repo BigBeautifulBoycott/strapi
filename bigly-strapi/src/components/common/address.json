@@ -1,24 +1,16 @@
 {
-  "collectionName": "components_core_locations",
-  "info": {
-    "displayName": "Location",
-    "icon": "pinMap"
-  },
-  "options": {},
+  "collectionName": "components_common_addresses",
+  "info": { "displayName": "Address", "icon": "pin" },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "default": "Main",
       "required": true
     },
-    "Country": {
-      "type": "string",
-      "default": "US"
-    },
-    "City": {
-      "type": "string"
-    },
-    "State": {
+    "line1": { "type": "string" },
+    "line2": { "type": "string" },
+    "city":  { "type": "string" },
+    "state": {
       "type": "enumeration",
       "enum": [
         "Alabama",
@@ -79,15 +71,7 @@
         "Wyoming"
       ]
     },
-    "Zip": {
-      "type": "string"
-    },
-    "Street_1": {
-      "type": "string"
-    },
-    "Street_2": {
-      "type": "string"
-    }
-  },
-  "config": {}
+    "postal_code": { "type": "string" },
+    "country": { "type": "string", "default": "US" }
+  }
 }

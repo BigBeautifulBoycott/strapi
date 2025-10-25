@@ -1,64 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CoreIdentifier extends Struct.ComponentSchema {
-  collectionName: 'components_core_identifiers';
+export interface CommonAddress extends Struct.ComponentSchema {
+  collectionName: 'components_common_addresses';
   info: {
-    displayName: 'Identifier';
-    icon: 'information';
+    displayName: 'Address';
+    icon: 'pin';
   };
   attributes: {
-    scheme: Schema.Attribute.Enumeration<
-      [
-        'TICKER',
-        'SEC_CIK',
-        'EIN',
-        'FEC_COMMITTEE',
-        'FEC_CANDIDATE',
-        'OPENCORPORATES',
-        'WIKIDATA',
-        'OTHER',
-      ]
-    > &
-      Schema.Attribute.Required;
-    text: Schema.Attribute.String;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface CoreLinks extends Struct.ComponentSchema {
-  collectionName: 'components_core_links';
-  info: {
-    displayName: 'Links';
-    icon: 'link';
-  };
-  attributes: {
-    BlueSky: Schema.Attribute.String;
-    Crunchbase: Schema.Attribute.String;
-    Facebook: Schema.Attribute.String;
-    GitHub: Schema.Attribute.String;
-    Instagram: Schema.Attribute.String;
-    LinkedIn: Schema.Attribute.String;
-    TikTok: Schema.Attribute.String;
-    Twitter: Schema.Attribute.String;
-    Website: Schema.Attribute.String;
-    Wikipedia: Schema.Attribute.String;
-    YouTube: Schema.Attribute.String;
-  };
-}
-
-export interface CoreLocation extends Struct.ComponentSchema {
-  collectionName: 'components_core_locations';
-  info: {
-    displayName: 'Location';
-    icon: 'pinMap';
-  };
-  attributes: {
-    City: Schema.Attribute.String;
-    Country: Schema.Attribute.String & Schema.Attribute.DefaultTo<'US'>;
-    Name: Schema.Attribute.String &
+    city: Schema.Attribute.String;
+    country: Schema.Attribute.String & Schema.Attribute.DefaultTo<'US'>;
+    line1: Schema.Attribute.String;
+    line2: Schema.Attribute.String;
+    name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Main'>;
-    State: Schema.Attribute.Enumeration<
+    postal_code: Schema.Attribute.String;
+    state: Schema.Attribute.Enumeration<
       [
         'Alabama',
         'Alaska',
@@ -118,22 +75,115 @@ export interface CoreLocation extends Struct.ComponentSchema {
         'Wyoming',
       ]
     >;
-    Street_1: Schema.Attribute.String;
-    Street_2: Schema.Attribute.String;
-    Zip: Schema.Attribute.String;
   };
 }
 
-export interface CoreRating extends Struct.ComponentSchema {
-  collectionName: 'components_core_ratings';
+export interface CommonGeoPoint extends Struct.ComponentSchema {
+  collectionName: 'components_common_geo_points';
   info: {
-    displayName: 'rating';
-    icon: 'bold';
+    displayName: 'Geo Point';
+    icon: 'pin';
   };
   attributes: {
-    public_rating: Schema.Attribute.Decimal;
-    public_rating_reason: Schema.Attribute.String;
-    public_rating_updated_at: Schema.Attribute.DateTime;
+    lat: Schema.Attribute.Decimal;
+    lng: Schema.Attribute.Decimal;
+  };
+}
+
+export interface CommonLink extends Struct.ComponentSchema {
+  collectionName: 'components_common_links';
+  info: {
+    description: 'Generic external link';
+    displayName: 'Link';
+    icon: 'link';
+  };
+  attributes: {
+    kind: Schema.Attribute.Enumeration<
+      [
+        'website',
+        'rsvp',
+        'livestream',
+        'discord',
+        'tiktok',
+        'twitter',
+        'facebook',
+        'instagram',
+        'youtube',
+        'other',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'website'>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CommonSocialProfile extends Struct.ComponentSchema {
+  collectionName: 'components_common_social_profiles';
+  info: {
+    description: 'Social account or profile URL';
+    displayName: 'Social Profile';
+    icon: 'twitter';
+  };
+  attributes: {
+    handle: Schema.Attribute.String;
+    platform: Schema.Attribute.Enumeration<
+      [
+        'website',
+        'twitter',
+        'facebook',
+        'instagram',
+        'linkedin',
+        'github',
+        'tiktok',
+        'bluesky',
+        'youtube',
+        'reddit',
+        'other',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'other'>;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface CommonSource extends Struct.ComponentSchema {
+  collectionName: 'components_common_sources';
+  info: {
+    description: 'Evidence/source link';
+    displayName: 'Source';
+    icon: 'link';
+  };
+  attributes: {
+    archived_url: Schema.Attribute.String;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface EventEvidenceItem extends Struct.ComponentSchema {
+  collectionName: 'components_event_evidence_items';
+  info: {
+    description: 'Evidence attached to an event';
+    displayName: 'Evidence Item';
+    icon: 'attachment';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    kind: Schema.Attribute.Enumeration<
+      ['image', 'screenshot', 'article', 'post', 'document', 'video', 'other']
+    > &
+      Schema.Attribute.DefaultTo<'article'>;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -199,18 +249,36 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SubjectProfile extends Struct.ComponentSchema {
+  collectionName: 'components_subject_profiles';
+  info: {
+    displayName: 'Subject Profile';
+    icon: 'user';
+  };
+  attributes: {
+    hq_country: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images'>;
+    tagline: Schema.Attribute.String;
+    ticker: Schema.Attribute.String;
+    website: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'core.identifier': CoreIdentifier;
-      'core.links': CoreLinks;
-      'core.location': CoreLocation;
-      'core.rating': CoreRating;
+      'common.address': CommonAddress;
+      'common.geo-point': CommonGeoPoint;
+      'common.link': CommonLink;
+      'common.social-profile': CommonSocialProfile;
+      'common.source': CommonSource;
+      'event.evidence-item': EventEvidenceItem;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'subject.profile': SubjectProfile;
     }
   }
 }

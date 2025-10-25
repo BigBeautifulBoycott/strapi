@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_common_geo_points",
+  "info": { "displayName": "Geo Point", "icon": "pin" },
+  "attributes": {
+    "lat": { "type": "decimal", "required": false },
+    "lng": { "type": "decimal", "required": false }
+  }
+}
