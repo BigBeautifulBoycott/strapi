@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.2...v1.0.3) (2025-10-25)
+
+
+### Bug Fixes
+
+* latest image tag ([cfbc457](https://github.com/BigBeautifulBoycott/strapi/commit/cfbc45712a5d50111d6081dc05e2c24cfe579c30))
+
 ## [1.0.2](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.1...v1.0.2) (2025-10-25)
 
 
