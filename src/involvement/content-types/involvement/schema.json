@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "involvements",
+  "info": { "singularName": "involvement", "pluralName": "involvements", "displayName": "Involvement" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "role": {
+      "type": "enumeration",
+      "enum": ["actor","spokesperson","employer","affiliate","target","supporter","opponent","other"],
+      "default": "actor"
+    },
+    "weight": { "type": "decimal", "default": 1 },
+    "notes": { "type": "text" },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "event_involvements",
+      "required": true
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "involvements",
+      "required": true
+    }
+  }
+}

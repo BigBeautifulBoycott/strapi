@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subjects",
+  "info": {
+    "singularName": "subject",
+    "pluralName": "subjects",
+    "displayName": "Subject",
+    "description": "Company, organization, or person being tracked"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "name", "required": true },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["company", "organization", "person"],
+      "required": true
+    },
+    "about": { "type": "richtext" },
+
+    "website_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.social-profile"
+    },
+
+    "industry": { "type": "string" },
+    "sector": { "type": "string" },
+    "ticker": { "type": "string" },
+    "exchange": { "type": "string" },
+    "hq_country": { "type": "string" },
+
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "current_title": { "type": "string" },
+
+    "relationships_from": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::relationship.relationship",
+      "mappedBy": "from_subject"
+    },
+    "relationships_to": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::relationship.relationship",
+      "mappedBy": "to_subject"
+    },
+    "event_involvements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::involvement.involvement",
+      "mappedBy": "subject"
+    },
+
+    "logo": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+
+    "score": { "type": "decimal", "default": 0 },
+    "score_updated_at": { "type": "datetime" }
+  }
+}

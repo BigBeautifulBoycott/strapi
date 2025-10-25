@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": "A tracked incident or action involving subjects"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title" },
+    "summary": { "type": "text" },
+    "description": { "type": "richtext" },
+    "date": { "type": "date", "required": true },
+    "category": { "type": "enumeration", "enum": ["political", "ethical", "legal", "environmental", "social", "labor", "other"], "default": "other" },
+    "sentiment": { "type": "enumeration", "enum": ["positive", "negative", "neutral"], "default": "neutral" },
+    "impact": { "type": "decimal", "min": -5, "max": 5, "default": 0 },
+    "sources": { "type": "component", "repeatable": true, "component": "common.source" },
+    "links": { "type": "component", "repeatable": true, "component": "common.link" },
+    "evidence": { "type": "component", "repeatable": true, "component": "event.evidence-item" },
+    "involvements": { "type": "relation", "relation": "oneToMany", "target": "api::involvement.involvement", "mappedBy": "event" }
+  }
+}

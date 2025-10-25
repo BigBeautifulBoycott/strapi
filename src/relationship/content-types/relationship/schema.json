@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relationships",
+  "info": {
+    "singularName": "relationship",
+    "pluralName": "relationships",
+    "displayName": "Relationship",
+    "description": "Directed relationship between subjects with start and end dates"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "employee_of",
+        "executive_of",
+        "founder_of",
+        "board_member_of",
+        "advisor_to",
+        "contractor_of",
+        "member_of",
+        "affiliate_of",
+        "subsidiary_of",
+        "parent_of",
+        "partner_of",
+        "investor_in",
+        "spouse_of",
+        "relative_of",
+        "other"
+      ],
+      "required": true
+    },
+    "role_title": { "type": "string" },
+    "start_date": { "type": "date" },
+    "end_date": { "type": "date" },
+    "current": { "type": "boolean", "default": false },
+    "confidence": { "type": "integer", "min": 1, "max": 5, "default": 3 },
+    "notes": { "type": "text" },
+    "sources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.source"
+    },
+    "from_subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "relationships_from",
+      "required": true
+    },
+    "to_subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "relationships_to",
+      "required": true
+    }
+  }
+}
