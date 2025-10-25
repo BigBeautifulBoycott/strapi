@@ -1,13 +1,38 @@
 {
   "collectionName": "components_common_social_profiles",
-  "info": { "displayName": "Social Profile", "icon": "twitter", "description": "Social account or profile URL" },
+  "info": {
+    "displayName": "Social Profile",
+    "icon": "twitter",
+    "description": "Social account or profile URL"
+  },
   "attributes": {
     "platform": {
       "type": "enumeration",
-      "enum": ["website","twitter","facebook","instagram","linkedin","github","tiktok","bluesky","youtube","reddit","other"],
-      "default": "other"
+      "default": "other",
+      "enum": [
+        "website",
+        "tiktok",
+        "substack",
+        "twitter",
+        "facebook",
+        "instagram",
+        "onlyfans",
+        "linkedin",
+        "github",
+        "substack",
+        "bluesky",
+        "youtube",
+        "reddit",
+        "signal",
+        "snapchat",
+        "other"
+      ]
     },
-    "handle": { "type": "string" },
-    "url": { "type": "string" }
+    "notes": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
   }
 }

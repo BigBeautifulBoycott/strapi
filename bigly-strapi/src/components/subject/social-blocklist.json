@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_subject_social_blocklists",
+  "info": {
+    "displayName": "Social Blocklist",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "is_blocklisted": {
+      "type": "boolean",
+      "required": true
+    },
+    "reasoning": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
