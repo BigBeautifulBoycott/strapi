@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.1.0...v1.2.0) (2025-10-25)
+
+
+### Features
+
+* influencers ([3340525](https://github.com/BigBeautifulBoycott/strapi/commit/3340525556aa389186791ef8a977c63a4d1c214d))
+
 ## [1.1.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.3...v1.1.0) (2025-10-25)
 
 
