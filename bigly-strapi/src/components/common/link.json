@@ -1,9 +1,33 @@
 {
   "collectionName": "components_common_links",
-  "info": { "displayName": "Link", "icon": "link", "description": "Generic external link" },
+  "info": {
+    "displayName": "Link",
+    "icon": "link",
+    "description": "Generic external link"
+  },
   "attributes": {
-    "label": { "type": "string", "required": true, "maxLength": 120 },
-    "url":   { "type": "string", "required": true },
-    "kind":  { "type": "enumeration", "enum": ["website","rsvp","livestream","discord","tiktok","twitter","facebook","instagram","youtube","other"], "default": "website" }
+    "label": {
+      "type": "string",
+      "maxLength": 120,
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "kind": {
+      "type": "enumeration",
+      "default": "website",
+      "enum": [
+        "website",
+        "discord",
+        "tiktok",
+        "twitter",
+        "facebook",
+        "instagram",
+        "youtube",
+        "other"
+      ]
+    }
   }
 }
