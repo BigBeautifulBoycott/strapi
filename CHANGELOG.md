@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.3...v1.1.0) (2025-10-25)
+
+
+### Features
+
+* public url & cron ([86dd697](https://github.com/BigBeautifulBoycott/strapi/commit/86dd6972f115f658313c9d8431df638b3bb07384))
+
 ## [1.0.3](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.2...v1.0.3) (2025-10-25)
 
 
