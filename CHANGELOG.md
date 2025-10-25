@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.1...v1.0.2) (2025-10-25)
+
+
+### Performance Improvements
+
+* Only AMD image, arm later ([9de8f24](https://github.com/BigBeautifulBoycott/strapi/commit/9de8f245a21aafafeb2aa1ebb7fa40f1126d7b24))
+
 ## [1.0.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.0.0...v1.0.1) (2025-10-25)
 
 
