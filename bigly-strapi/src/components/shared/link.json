@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "ariaLabel": {
+      "type": "string"
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "tracking": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

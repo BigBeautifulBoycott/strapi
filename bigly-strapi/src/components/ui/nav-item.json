@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_ui_nav_items",
+  "info": {
+    "displayName": "Nav Item"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false,
+      "required": true
+    },
+    "children": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
