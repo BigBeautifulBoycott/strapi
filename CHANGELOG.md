@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.2.1...v1.3.0) (2025-10-26)
+
+
+### Features
+
+* Connect to Strapi & manage header ([b6b8093](https://github.com/BigBeautifulBoycott/strapi/commit/b6b8093a0f6673bf07f2bf77571fa1bc4161e048))
+* policy content ([306c797](https://github.com/BigBeautifulBoycott/strapi/commit/306c79740674f12843d930cb30abc86fafd207a5))
+
 ## [1.2.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.2.0...v1.2.1) (2025-10-25)
 
 
