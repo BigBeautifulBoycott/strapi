@@ -11,8 +11,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "disclaimer": {
-      "type": "string"
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sections": {
+      "type": "component",
+      "component": "ui.footer-section",
+      "repeatable": true
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "copyright": {
+      "type": "string",
+      "default": "© 2025 Big Beautiful Boycott"
+    },
+    "bottom_links": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
     }
   }
 }

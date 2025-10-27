@@ -63,11 +63,6 @@
       "component": "common.source",
       "repeatable": true
     },
-    "evidence": {
-      "type": "component",
-      "component": "event.evidence-item",
-      "repeatable": true
-    },
     "involvements": {
       "type": "relation",
       "relation": "oneToMany",

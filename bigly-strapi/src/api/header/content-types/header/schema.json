@@ -32,11 +32,6 @@
       "type": "component",
       "component": "ui.button",
       "repeatable": true
-    },
-    "alert": {
-      "type": "component",
-      "component": "ui.alert-banner",
-      "repeatable": false
     }
   }
 }
