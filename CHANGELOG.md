@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.4.0...v1.4.1) (2025-10-27)
+
+
+### Bug Fixes
+
+* remove alert banner ([4031182](https://github.com/BigBeautifulBoycott/strapi/commit/40311826e5b30c9020dbd0ae03e2a33fe40cd247))
+
 ## [1.4.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.3.0...v1.4.0) (2025-10-27)
 
 
