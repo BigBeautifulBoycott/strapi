@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.4.1...v1.5.0) (2025-10-29)
+
+
+### Features
+
+* content types ([995712f](https://github.com/BigBeautifulBoycott/strapi/commit/995712fc3f21ec8474c66584e8b562900b890844))
+
 ## [1.4.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.4.0...v1.4.1) (2025-10-27)
 
 
