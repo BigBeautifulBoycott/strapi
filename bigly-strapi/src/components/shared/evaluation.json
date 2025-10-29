@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_evaluations",
+  "info": {
+    "displayName": "Evaluation",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "sentiment": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "good",
+        "bad"
+      ]
+    },
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 5
+    },
+    "summary": {
+      "type": "string"
+    },
+    "reasoning_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reasoning-tag.reasoning-tag"
+    }
+  },
+  "config": {}
+}

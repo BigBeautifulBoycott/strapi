@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reasoning_tags",
+  "info": {
+    "singularName": "reasoning-tag",
+    "pluralName": "reasoning-tags",
+    "displayName": "Reasoning tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "about": {
+      "type": "text"
+    },
+    "color": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    }
+  }
+}

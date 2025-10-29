@@ -1,9 +1,0 @@
-{
-  "collectionName": "components_common_sources",
-  "info": { "displayName": "Source", "icon": "link", "description": "Evidence/source link" },
-  "attributes": {
-    "label": { "type": "string", "required": true, "maxLength": 120 },
-    "url":   { "type": "string", "required": true },
-    "archived_url": { "type": "string" }
-  }
-}

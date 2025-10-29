@@ -22,6 +22,9 @@
     },
     "tracking": {
       "type": "json"
+    },
+    "archive_url": {
+      "type": "string"
     }
   },
   "config": {}

@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_contact_social_profiles",
+  "info": {
+    "displayName": "Social Profile",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "TikTok",
+        "Instagram",
+        "LinkedIn",
+        "Facebook",
+        "Twitter",
+        "BlueSky",
+        "YouTube",
+        "TruthSocial"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Main",
+      "enum": [
+        "Main",
+        "Support",
+        "Leadership",
+        "Developer",
+        "Internal Team"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "private": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "why_private": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "private"
+            },
+            true
+          ]
+        }
+      },
+      "required": false
+    }
+  },
+  "config": {}
+}

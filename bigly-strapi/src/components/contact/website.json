@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_contact_websites",
+  "info": {
+    "displayName": "Website"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Main",
+        "Investor",
+        "Contact"
+      ]
+    },
+    "private": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "why_private": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "private"
+            },
+            true
+          ]
+        }
+      },
+      "required": false
+    }
+  },
+  "config": {}
+}

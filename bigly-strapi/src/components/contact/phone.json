@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_contact_phones",
+  "info": {
+    "displayName": "Phone",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "phone_number": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Main",
+      "enum": [
+        "Main",
+        "Support",
+        "Investor",
+        "Internal",
+        "Leadership",
+        "Media/Press"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "private": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "why_private": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "private"
+            },
+            true
+          ]
+        }
+      },
+      "required": false
+    }
+  },
+  "config": {}
+}

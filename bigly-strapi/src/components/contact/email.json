@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_contact_emails",
+  "info": {
+    "displayName": "Email",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Main",
+      "enum": [
+        "Main",
+        "Support",
+        "Leadership",
+        "Press/Media",
+        "Other"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "private": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "why_private": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "private"
+            },
+            true
+          ]
+        }
+      },
+      "required": false
+    }
+  },
+  "config": {}
+}
