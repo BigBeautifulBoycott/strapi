@@ -22,13 +22,13 @@
     "about": {
       "type": "text"
     },
+    "icon": {
+      "type": "string"
+    },
     "color": {
       "type": "customField",
       "customField": "plugin::color-picker.color",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
-    },
-    "icon": {
-      "type": "string"
     }
   }
 }

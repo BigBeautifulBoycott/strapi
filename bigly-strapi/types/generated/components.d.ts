@@ -8,6 +8,7 @@ export interface ContactAddressss extends Struct.ComponentSchema {
   attributes: {
     address_1: Schema.Attribute.String;
     address_2: Schema.Attribute.String;
+    attention: Schema.Attribute.String;
     city: Schema.Attribute.String;
     country: Schema.Attribute.Enumeration<
       ['United States', 'Canada', 'Mexico', 'United Kingdom', 'Sealand']

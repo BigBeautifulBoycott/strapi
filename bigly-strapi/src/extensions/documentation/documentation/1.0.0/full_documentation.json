@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-31T21:27:08.740Z"
+    "x-generation-date": "2025-10-31T23:19:44.579Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -9107,10 +9107,10 @@
                 "about": {
                   "type": "string"
                 },
-                "color": {
+                "icon": {
                   "type": "string"
                 },
-                "icon": {
+                "color": {
                   "type": "string"
                 },
                 "createdAt": {
@@ -9350,6 +9350,9 @@
               "P.O. Box",
               "Investor"
             ]
+          },
+          "attention": {
+            "type": "string"
           },
           "note": {
             "type": "string"
@@ -15473,10 +15476,10 @@
               "about": {
                 "type": "string"
               },
-              "color": {
+              "icon": {
                 "type": "string"
               },
-              "icon": {
+              "color": {
                 "type": "string"
               },
               "locale": {
@@ -15556,10 +15559,10 @@
           "about": {
             "type": "string"
           },
-          "color": {
+          "icon": {
             "type": "string"
           },
-          "icon": {
+          "color": {
             "type": "string"
           },
           "createdAt": {
@@ -15871,10 +15874,10 @@
                 "about": {
                   "type": "string"
                 },
-                "color": {
+                "icon": {
                   "type": "string"
                 },
-                "icon": {
+                "color": {
                   "type": "string"
                 },
                 "createdAt": {

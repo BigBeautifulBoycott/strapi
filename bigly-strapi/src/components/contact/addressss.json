@@ -21,6 +21,9 @@
         "Investor"
       ]
     },
+    "attention": {
+      "type": "string"
+    },
     "note": {
       "type": "string"
     },
