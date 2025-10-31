@@ -201,7 +201,8 @@ export interface SharedEvaluation extends Struct.ComponentSchema {
           min: 1;
         },
         number
-      >;
+      > &
+      Schema.Attribute.DefaultTo<3>;
     reasoning_tags: Schema.Attribute.Relation<
       'oneToMany',
       'api::reasoning-tag.reasoning-tag'

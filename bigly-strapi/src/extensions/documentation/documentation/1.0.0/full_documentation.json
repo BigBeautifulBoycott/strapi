@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-29T00:10:55.310Z"
+    "x-generation-date": "2025-10-31T19:46:12.382Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -7993,6 +7993,12 @@
               "description": {
                 "type": "string"
               },
+              "icon": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
               "companies": {
                 "type": "array",
                 "items": {
@@ -8084,6 +8090,12 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "color": {
             "type": "string"
           },
           "companies": {
@@ -8728,6 +8740,12 @@
                     "description": {
                       "type": "string"
                     },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
                     "companies": {
                       "type": "array",
                       "items": {
@@ -8813,6 +8831,12 @@
                         "type": "string"
                       },
                       "summary": {
+                        "type": "string"
+                      },
+                      "icon": {
+                        "type": "string"
+                      },
+                      "color": {
                         "type": "string"
                       },
                       "companies": {
@@ -10214,6 +10238,12 @@
               "description": {
                 "type": "string"
               },
+              "icon": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
               "companies": {
                 "type": "array",
                 "items": {
@@ -10398,6 +10428,12 @@
                             "type": "string"
                           },
                           "summary": {
+                            "type": "string"
+                          },
+                          "icon": {
+                            "type": "string"
+                          },
+                          "color": {
                             "type": "string"
                           },
                           "companies": {
@@ -15903,6 +15939,12 @@
               "summary": {
                 "type": "string"
               },
+              "icon": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
               "companies": {
                 "type": "array",
                 "items": {
@@ -15993,6 +16035,12 @@
             "type": "string"
           },
           "summary": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "color": {
             "type": "string"
           },
           "companies": {
@@ -16637,6 +16685,12 @@
                     "description": {
                       "type": "string"
                     },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
                     "companies": {
                       "type": "array",
                       "items": {
@@ -16722,6 +16776,12 @@
                         "type": "string"
                       },
                       "summary": {
+                        "type": "string"
+                      },
+                      "icon": {
+                        "type": "string"
+                      },
+                      "color": {
                         "type": "string"
                       },
                       "companies": {
