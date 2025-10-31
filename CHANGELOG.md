@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.6.0...v1.7.0) (2025-10-31)
+
+
+### Features
+
+* enums ([cf0079b](https://github.com/BigBeautifulBoycott/strapi/commit/cf0079bb84f0fb13216202411fa2c6815073e596))
+
+
+### Bug Fixes
+
+* stuff ([ca6e454](https://github.com/BigBeautifulBoycott/strapi/commit/ca6e4549fed392269eb482b9d6ac464a95409c80))
+
 ## [1.6.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.5.0...v1.6.0) (2025-10-31)
 
 
