@@ -17,7 +17,8 @@
         "Facility",
         "Home",
         "Event",
-        "P.O. Box"
+        "P.O. Box",
+        "Investor"
       ]
     },
     "note": {

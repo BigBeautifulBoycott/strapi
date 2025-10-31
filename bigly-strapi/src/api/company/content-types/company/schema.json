@@ -71,6 +71,9 @@
         "contact.phone",
         "contact.addressss"
       ]
+    },
+    "Reasonsdfl": {
+      "type": "richtext"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-31T20:01:36.649Z"
+    "x-generation-date": "2025-10-31T21:27:08.740Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8947,6 +8947,9 @@
                     }
                   }
                 },
+                "Reasonsdfl": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -9107,6 +9110,9 @@
                 "color": {
                   "type": "string"
                 },
+                "icon": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -9216,7 +9222,8 @@
               "Twitter",
               "BlueSky",
               "YouTube",
-              "TruthSocial"
+              "TruthSocial",
+              "Pinterest"
             ]
           },
           "url": {
@@ -9264,6 +9271,7 @@
             "enum": [
               "Main",
               "Support",
+              "Investor",
               "Leadership",
               "Press/Media",
               "Other"
@@ -9339,7 +9347,8 @@
               "Facility",
               "Home",
               "Event",
-              "P.O. Box"
+              "P.O. Box",
+              "Investor"
             ]
           },
           "note": {
@@ -9538,6 +9547,9 @@
                     "contact.addressss": "#/components/schemas/ContactAddressssComponent"
                   }
                 }
+              },
+              "Reasonsdfl": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -10544,6 +10556,9 @@
                         }
                       }
                     },
+                    "Reasonsdfl": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -10704,6 +10719,9 @@
                 "contact.addressss": "#/components/schemas/ContactAddressssComponent"
               }
             }
+          },
+          "Reasonsdfl": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -15458,6 +15476,9 @@
               "color": {
                 "type": "string"
               },
+              "icon": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -15536,6 +15557,9 @@
             "type": "string"
           },
           "color": {
+            "type": "string"
+          },
+          "icon": {
             "type": "string"
           },
           "createdAt": {
@@ -15848,6 +15872,9 @@
                   "type": "string"
                 },
                 "color": {
+                  "type": "string"
+                },
+                "icon": {
                   "type": "string"
                 },
                 "createdAt": {
@@ -16891,6 +16918,9 @@
                       "contact.addressss": "#/components/schemas/ContactAddressssComponent"
                     }
                   }
+                },
+                "Reasonsdfl": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",

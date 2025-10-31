@@ -569,6 +569,7 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Reasoning: Schema.Attribute.Blocks;
+    Reasonsdfl: Schema.Attribute.RichText;
     slug: Schema.Attribute.UID<'name'>;
     state: Schema.Attribute.Enumeration<['create', 'refine', 'stage', 'hold']>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
@@ -758,7 +759,7 @@ export interface ApiReasoningTagReasoningTag
     singularName: 'reasoning-tag';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     about: Schema.Attribute.Text;
@@ -767,6 +768,7 @@ export interface ApiReasoningTagReasoningTag
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

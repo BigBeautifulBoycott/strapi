@@ -87,6 +87,7 @@ export interface ContactAddressss extends Struct.ComponentSchema {
         'Home',
         'Event',
         'P.O. Box',
+        'Investor',
       ]
     > &
       Schema.Attribute.Required &
@@ -108,7 +109,7 @@ export interface ContactEmail extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     type: Schema.Attribute.Enumeration<
-      ['Main', 'Support', 'Leadership', 'Press/Media', 'Other']
+      ['Main', 'Support', 'Investor', 'Leadership', 'Press/Media', 'Other']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Main'>;
@@ -155,6 +156,7 @@ export interface ContactSocialProfile extends Struct.ComponentSchema {
         'BlueSky',
         'YouTube',
         'TruthSocial',
+        'Pinterest',
       ]
     > &
       Schema.Attribute.Required;

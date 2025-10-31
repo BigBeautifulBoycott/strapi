@@ -17,6 +17,7 @@
       "enum": [
         "Main",
         "Support",
+        "Investor",
         "Leadership",
         "Press/Media",
         "Other"
