@@ -36,6 +36,9 @@
         "images"
       ]
     },
+    "about": {
+      "type": "string"
+    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -47,15 +50,6 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "companies"
-    },
-    "how_to_boycott": {
-      "type": "blocks"
-    },
-    "about": {
-      "type": "string"
-    },
-    "Reasoning": {
-      "type": "blocks"
     },
     "Evaluation": {
       "type": "component",
@@ -72,8 +66,11 @@
         "contact.addressss"
       ]
     },
-    "Reasonsdfl": {
-      "type": "richtext"
+    "how_to_boycott": {
+      "type": "blocks"
+    },
+    "Reasoning": {
+      "type": "blocks"
     }
   }
 }

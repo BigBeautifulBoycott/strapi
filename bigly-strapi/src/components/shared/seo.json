@@ -16,11 +16,19 @@
       "type": "text",
       "required": true
     },
+    "canonicalUrl": {
+      "type": "string"
+    },
     "shareImage": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "structuredData": {
+      "type": "json"
     }
   }
 }

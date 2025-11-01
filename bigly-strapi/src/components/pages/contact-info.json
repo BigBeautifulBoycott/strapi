@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_pages_contact_infos",
+  "info": {
+    "displayName": "Contact Info"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "default": "media@bigbeautifulboycott.us"
+    }
+  },
+  "config": {}
+}

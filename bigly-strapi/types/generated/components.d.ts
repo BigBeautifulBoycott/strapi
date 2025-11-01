@@ -189,6 +189,19 @@ export interface ContactWebsite extends Struct.ComponentSchema {
   };
 }
 
+export interface PagesContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_pages_contact_infos';
+  info: {
+    displayName: 'Contact Info';
+  };
+  attributes: {
+    email: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'media@bigbeautifulboycott.us'>;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedEvaluation extends Struct.ComponentSchema {
   collectionName: 'components_shared_evaluations';
   info: {
@@ -288,9 +301,11 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
+    canonicalUrl: Schema.Attribute.String;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     shareImage: Schema.Attribute.Media<'images'>;
+    structuredData: Schema.Attribute.JSON;
   };
 }
 
@@ -353,6 +368,7 @@ declare module '@strapi/strapi' {
       'contact.phone': ContactPhone;
       'contact.social-profile': ContactSocialProfile;
       'contact.website': ContactWebsite;
+      'pages.contact-info': PagesContactInfo;
       'shared.evaluation': SharedEvaluation;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;

@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "press_releases",
+  "info": {
+    "singularName": "press-release",
+    "pluralName": "press-releases",
+    "displayName": "Press Release"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "Headline": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "Subheadline": {
+      "type": "string"
+    },
+    "embargo": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "public_release_at": {
+      "type": "datetime",
+      "required": true
+    },
+    "release_to_embargo_at": {
+      "type": "datetime",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "embargo"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "releaseCityState": {
+      "type": "string",
+      "default": "Arlington, VA"
+    },
+    "Introduction": {
+      "type": "string"
+    },
+    "leadParagraph": {
+      "type": "richtext"
+    },
+    "Body": {
+      "type": "richtext"
+    },
+    "supportingInfo": {
+      "type": "richtext"
+    },
+    "callToAction": {
+      "type": "richtext"
+    },
+    "Boilerplate": {
+      "type": "richtext"
+    }
+  }
+}
