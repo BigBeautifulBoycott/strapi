@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.7.0...v1.8.0) (2025-11-01)
+
+
+### Features
+
+* thigns and stuff ([edf8547](https://github.com/BigBeautifulBoycott/strapi/commit/edf854741d4660c07074cfd995485975a78753f3))
+
+
+### Bug Fixes
+
+* cleanup & reasoning tags ([250a3da](https://github.com/BigBeautifulBoycott/strapi/commit/250a3da386611c9397e3a65884b9eb9dc54ee286))
+
 ## [1.7.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.6.0...v1.7.0) (2025-10-31)
 
 
