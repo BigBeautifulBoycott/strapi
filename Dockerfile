@@ -9,10 +9,13 @@ COPY bigly-strapi/. .
 ENV NODE_ENV=production
 RUN npm run build
 
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates && rm -rf /var/lib/apt/lists/*
+
 USER node
 
 EXPOSE 1337
-HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=5 \
-  CMD node -e "require('http').get('http://127.0.0.1:1337/_health',res=>{if(res.statusCode!==204)process.exit(1)}).on('error',()=>process.exit(1))"
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=5 \
+  CMD curl -sf http://127.0.0.1:1337/health | grep -q '"message":"OK"' || exit 1
 
 CMD ["npm", "run", "start"]
