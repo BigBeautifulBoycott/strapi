@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.8.0...v1.8.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* healthcheck ([7030d5d](https://github.com/BigBeautifulBoycott/strapi/commit/7030d5da03a07d0d3c54de82f4a0e654f9b1bfb6))
+
 ## [1.8.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.7.0...v1.8.0) (2025-11-01)
 
 
