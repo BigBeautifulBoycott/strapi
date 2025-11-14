@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_sources",
+  "info": {
+    "displayName": "Source"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "News Article",
+        "Official Document",
+        "Corporate Document",
+        "Social Media",
+        "Watchdog"
+      ]
+    },
+    "publisher": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "archive_url": {
+      "type": "string"
+    },
+    "published_date": {
+      "type": "date"
+    },
+    "notes": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

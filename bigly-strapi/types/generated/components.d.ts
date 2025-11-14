@@ -202,6 +202,48 @@ export interface PagesContactInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface PagesHowTo extends Struct.ComponentSchema {
+  collectionName: 'components_pages_how_tos';
+  info: {
+    displayName: 'Action Items';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 110;
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+      }>;
+    Type: Schema.Attribute.Enumeration<['yes', 'no', 'maybe', 'note']>;
+  };
+}
+
+export interface PagesReasoning extends Struct.ComponentSchema {
+  collectionName: 'components_pages_reasonings';
+  info: {
+    displayName: 'Reasoning';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    Source: Schema.Attribute.Component<'shared.source', true>;
+  };
+}
+
 export interface SharedEvaluation extends Struct.ComponentSchema {
   collectionName: 'components_shared_evaluations';
   info: {
@@ -225,7 +267,11 @@ export interface SharedEvaluation extends Struct.ComponentSchema {
     >;
     sentiment: Schema.Attribute.Enumeration<['good', 'bad']> &
       Schema.Attribute.Required;
-    summary: Schema.Attribute.String;
+    summary: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
   };
 }
 
@@ -321,6 +367,30 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSource extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sources';
+  info: {
+    displayName: 'Source';
+  };
+  attributes: {
+    archive_url: Schema.Attribute.String;
+    notes: Schema.Attribute.Text;
+    published_date: Schema.Attribute.Date;
+    publisher: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'News Article',
+        'Official Document',
+        'Corporate Document',
+        'Social Media',
+        'Watchdog',
+      ]
+    >;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -369,6 +439,8 @@ declare module '@strapi/strapi' {
       'contact.social-profile': ContactSocialProfile;
       'contact.website': ContactWebsite;
       'pages.contact-info': PagesContactInfo;
+      'pages.how-to': PagesHowTo;
+      'pages.reasoning': PagesReasoning;
       'shared.evaluation': SharedEvaluation;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;
@@ -377,6 +449,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.source': SharedSource;
       'ui.button': UiButton;
       'ui.footer-section': UiFooterSection;
       'ui.nav-item': UiNavItem;

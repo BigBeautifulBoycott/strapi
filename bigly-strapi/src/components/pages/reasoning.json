@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_pages_reasonings",
+  "info": {
+    "displayName": "Reasoning"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Source": {
+      "type": "component",
+      "component": "shared.source",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

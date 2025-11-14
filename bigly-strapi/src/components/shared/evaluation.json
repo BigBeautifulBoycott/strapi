@@ -22,7 +22,9 @@
       "max": 5
     },
     "summary": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 60,
+      "required": true
     },
     "reasoning_tags": {
       "type": "relation",

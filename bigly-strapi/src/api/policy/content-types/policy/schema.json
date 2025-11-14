@@ -27,15 +27,8 @@
     "summary": {
       "type": "string"
     },
-    "contact_email": {
-      "type": "email",
-      "required": true,
-      "default": "lawyerz@bigbeautifulboycott.us"
-    },
-    "section": {
-      "type": "component",
-      "component": "shared.policy-section",
-      "repeatable": true
+    "content": {
+      "type": "richtext"
     }
   }
 }

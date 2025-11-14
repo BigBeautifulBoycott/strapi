@@ -19,14 +19,10 @@
       "type": "uid",
       "targetField": "name"
     },
-    "state": {
-      "type": "enumeration",
-      "enum": [
-        "create",
-        "refine",
-        "stage",
-        "hold"
-      ]
+    "sector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sector.sector"
     },
     "logo": {
       "type": "media",
@@ -36,25 +32,41 @@
         "images"
       ]
     },
-    "about": {
+    "ticker": {
       "type": "string"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "companies"
-    },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
-      "mappedBy": "companies"
     },
     "Evaluation": {
       "type": "component",
       "component": "shared.evaluation",
       "repeatable": false
+    },
+    "intro": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "boycott_target": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "about": {
+      "type": "string",
+      "minLength": 30,
+      "maxLength": 65,
+      "required": false
+    },
+    "parent_company": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    },
+    "Reasoning": {
+      "type": "component",
+      "component": "pages.reasoning",
+      "repeatable": true
     },
     "contact": {
       "type": "dynamiczone",
@@ -66,11 +78,11 @@
         "contact.addressss"
       ]
     },
-    "how_to_boycott": {
-      "type": "blocks"
-    },
-    "Reasoning": {
-      "type": "blocks"
+    "ActionItems": {
+      "type": "component",
+      "component": "pages.how-to",
+      "repeatable": true,
+      "required": false
     }
   }
 }
