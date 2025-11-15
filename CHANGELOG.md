@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.9.0...v1.9.1) (2025-11-15)
+
+
+### Bug Fixes
+
+* company weeks ([21e8a0c](https://github.com/BigBeautifulBoycott/strapi/commit/21e8a0cccc9d29c79032bdda7fb5efc938f9d1f7))
+* Company Weeks ([4d93467](https://github.com/BigBeautifulBoycott/strapi/commit/4d93467d4b70d4a89c877c07dc83b84e8c376f55))
+
 ## [1.9.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.8.1...v1.9.0) (2025-11-15)
 
 
