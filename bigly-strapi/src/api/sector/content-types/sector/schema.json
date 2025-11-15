@@ -13,14 +13,16 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "maxLength": 25,
+      "required": true,
+      "unique": true
     },
     "slug": {
       "type": "uid",
       "targetField": "name",
       "required": true
     },
-    "icon_name": {
+    "icon": {
       "type": "string"
     },
     "color": {
