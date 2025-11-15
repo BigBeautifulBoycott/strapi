@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-15T18:53:23.086Z"
+    "x-generation-date": "2025-11-15T19:06:45.902Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -7912,6 +7912,12 @@
                         }
                       }
                     },
+                    "color": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
                     "Social": {
                       "$ref": "#/components/schemas/SocialShareSettingsComponent"
                     },
@@ -10253,6 +10259,12 @@
                           }
                         }
                       }
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
                     },
                     "Social": {
                       "$ref": "#/components/schemas/SocialShareSettingsComponent"
@@ -17047,6 +17059,12 @@
                   "example": "string or id"
                 }
               },
+              "color": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
               "Social": {
                 "$ref": "#/components/schemas/SocialShareSettingsComponent"
               },
@@ -17945,6 +17963,12 @@
                         }
                       }
                     },
+                    "color": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
                     "Social": {
                       "$ref": "#/components/schemas/SocialShareSettingsComponent"
                     },
@@ -18054,6 +18078,12 @@
                 }
               }
             }
+          },
+          "color": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
           },
           "Social": {
             "$ref": "#/components/schemas/SocialShareSettingsComponent"

@@ -35,7 +35,6 @@
     "strapi-advanced-uuid": "^2.1.1",
     "strapi-health-plugin": "^1.2.2",
     "strapi-plugin-backup": "^2.0.1",
-    "strapi-plugin-material-symbols": "^0.0.2-5",
     "strapi-plugin-multi-select": "^2.1.1",
     "strapi-plugin-publisher": "^2.0.5",
     "strapi-plugin-sortable-entries": "^1.2.0",
