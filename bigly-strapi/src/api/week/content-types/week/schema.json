@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weeks",
+  "info": {
+    "singularName": "week",
+    "pluralName": "weeks",
+    "displayName": "Week"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "regex": "^Week\\s+\\d+$"
+    },
+    "week_number": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": false
+    },
+    "publish_date": {
+      "type": "date",
+      "required": true
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

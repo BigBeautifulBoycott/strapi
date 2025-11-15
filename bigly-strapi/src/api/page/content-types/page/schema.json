@@ -31,14 +31,12 @@
       "component": "shared.seo",
       "repeatable": false
     },
-    "Content": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.slider",
-        "shared.rich-text",
-        "shared.quote",
-        "shared.media"
-      ]
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }

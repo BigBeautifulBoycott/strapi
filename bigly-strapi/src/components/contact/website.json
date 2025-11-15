@@ -14,7 +14,10 @@
       "enum": [
         "Main",
         "Investor",
-        "Contact"
+        "Contact",
+        "Press",
+        "Internal",
+        "Store"
       ]
     },
     "private": {

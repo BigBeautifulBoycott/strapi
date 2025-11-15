@@ -183,7 +183,9 @@ export interface ContactWebsite extends Struct.ComponentSchema {
     private: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    type: Schema.Attribute.Enumeration<['Main', 'Investor', 'Contact']>;
+    type: Schema.Attribute.Enumeration<
+      ['Main', 'Investor', 'Contact', 'Press', 'Internal', 'Store']
+    >;
     url: Schema.Attribute.String & Schema.Attribute.Required;
     why_private: Schema.Attribute.String;
   };
@@ -199,6 +201,44 @@ export interface PagesContactInfo extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'media@bigbeautifulboycott.us'>;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     Title: Schema.Attribute.String;
+  };
+}
+
+export interface PagesHowTo extends Struct.ComponentSchema {
+  collectionName: 'components_pages_how_tos';
+  info: {
+    displayName: 'Action Items';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 110;
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+      }>;
+    Type: Schema.Attribute.Enumeration<['yes', 'no', 'maybe', 'note']>;
+  };
+}
+
+export interface PagesReasoning extends Struct.ComponentSchema {
+  collectionName: 'components_pages_reasonings';
+  info: {
+    displayName: 'Reasoning';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    Source: Schema.Attribute.Component<'shared.source', true>;
   };
 }
 
@@ -225,7 +265,11 @@ export interface SharedEvaluation extends Struct.ComponentSchema {
     >;
     sentiment: Schema.Attribute.Enumeration<['good', 'bad']> &
       Schema.Attribute.Required;
-    summary: Schema.Attribute.String;
+    summary: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
   };
 }
 
@@ -321,6 +365,66 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSource extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sources';
+  info: {
+    displayName: 'Source';
+  };
+  attributes: {
+    archive_url: Schema.Attribute.String;
+    notes: Schema.Attribute.Text;
+    published_date: Schema.Attribute.Date;
+    publisher: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'News Article',
+        'Official Document',
+        'Corporate Document',
+        'Social Media',
+        'Watchdog',
+      ]
+    >;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SocialShareSettings extends Struct.ComponentSchema {
+  collectionName: 'components_social_share_settings';
+  info: {
+    displayName: 'Share Settings';
+  };
+  attributes: {
+    creator_notes: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 1000;
+      }>;
+    enable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    hashtags: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    link_override: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    message: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 20;
+      }>;
+    message_short: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 140;
+      }>;
+    share_image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+  };
+}
+
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -369,6 +473,8 @@ declare module '@strapi/strapi' {
       'contact.social-profile': ContactSocialProfile;
       'contact.website': ContactWebsite;
       'pages.contact-info': PagesContactInfo;
+      'pages.how-to': PagesHowTo;
+      'pages.reasoning': PagesReasoning;
       'shared.evaluation': SharedEvaluation;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;
@@ -377,6 +483,8 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.source': SharedSource;
+      'social.share-settings': SocialShareSettings;
       'ui.button': UiButton;
       'ui.footer-section': UiFooterSection;
       'ui.nav-item': UiNavItem;

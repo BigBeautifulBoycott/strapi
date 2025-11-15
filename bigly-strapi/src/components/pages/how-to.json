@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_pages_how_tos",
+  "info": {
+    "displayName": "Action Items"
+  },
+  "options": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no",
+        "maybe",
+        "note"
+      ]
+    },
+    "Title": {
+      "type": "string",
+      "maxLength": 70,
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "minLength": 110,
+      "maxLength": 300,
+      "required": true
+    }
+  },
+  "config": {}
+}

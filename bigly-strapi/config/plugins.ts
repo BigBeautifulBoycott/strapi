@@ -60,5 +60,71 @@ export default ({ env }) => ({
       },
     },
   },
-  // End Cloudflare
+  // Strapi Backup
+  backup: {
+    enabled: env('BACKUP_ENABLED'),
+    config: {
+      // ---- Scheduling ----
+      cronSchedule: env('BACKUP_CRON', '0 3 * * *'),            // default: 03:00 daily
+      cleanupCronSchedule: env('BACKUP_CLEANUP_CRON', '0 4 * * *'), // default: 04:00 daily
+
+      // ---- Storage (S3 or S3-compatible) ----
+      storageService: env('BACKUP_STORAGE_SERVICE', 'aws-s3'),  // aws-s3 | azure-blob-storage | gcs
+      awsAccessKeyId: env('AWS_ACCESS_KEY_ID'),
+      awsSecretAccessKey: env('AWS_SECRET_ACCESS_KEY'),
+      awsRegion: env('AWS_REGION'),                              // optional if awsS3Endpoint is used
+      //awsS3Endpoint: env('AWS_S3_ENDPOINT'),                     // e.g., https://s3.fr-par.scw.cloud or MinIO/R2
+      awsS3Bucket: env('AWS_S3_BUCKET'),
+
+      // ---- Database dump tool selection ----
+      databaseDriver: 'postgres',
+
+      // Provide exactly one of these based on your DB client:
+      pgDumpExecutable: env('PG_DUMP_PATH'),           // e.g., /usr/bin/pg_dump
+
+      // Optional DB tool flags
+      pgDumpOptions: (env('PG_DUMP_OPTIONS') || '--clean --if-exists').split(' '),
+
+
+      // ---- Filenames ----
+      customDatabaseBackupFilename: () =>
+        `strapi-db-${new Date().toISOString().replace(/[:.]/g, '-')}.sql`,
+      customUploadsBackupFilename: () =>
+        `strapi-uploads-${new Date().toISOString().replace(/[:.]/g, '-')}.tar`,
+
+      // ---- Cleanup ----
+      allowCleanup: env.bool('BACKUP_ALLOW_CLEANUP', true),
+      timeToKeepBackupsInSeconds: env.int('BACKUP_TTL_SECONDS', 60 * 60 * 24 * 14), // 14 days
+
+      // ---- Error handling ----
+      errorHandler: (error /*, strapi */) => {
+        // Keep it simple; logs surface in your aggregator
+        console.error('[backup] failed:', error?.message || error);
+      },
+
+      // ---- Toggles (if you need them) ----
+      // disableDatabaseBackup: env.bool('BACKUP_DISABLE_DB', false),
+      // disableUploadsBackup: env.bool('BACKUP_DISABLE_UPLOADS', false),
+    },
+  },
+  // Publisher
+  publisher: {
+    enabled: true,
+    config: {
+      // You can customize these later with real hooks.
+      hooks: {
+        beforePublish: async ({ strapi, uid, entity }) => {
+          // return false to block publish
+        },
+        afterPublish: async ({ strapi, uid, entity }) => {},
+        beforeUnpublish: async ({ strapi, uid, entity }) => {
+          // return false to block unpublish
+        },
+        afterUnpublish: async ({ strapi, uid, entity }) => {},
+      },
+      // examples if you want later:
+      // actions: { syncFrequency: '*/1 * * * *' },
+    },
+  },
+
 });
