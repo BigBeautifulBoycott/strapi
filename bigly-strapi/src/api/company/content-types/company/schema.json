@@ -35,6 +35,11 @@
     "ticker": {
       "type": "string"
     },
+    "social": {
+      "type": "component",
+      "component": "social.share-settings",
+      "repeatable": false
+    },
     "Evaluation": {
       "type": "component",
       "component": "shared.evaluation",
@@ -66,7 +71,7 @@
     "Reasoning": {
       "type": "component",
       "component": "pages.reasoning",
-      "repeatable": true
+      "repeatable": false
     },
     "contact": {
       "type": "dynamiczone",

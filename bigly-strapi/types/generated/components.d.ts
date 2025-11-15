@@ -183,7 +183,9 @@ export interface ContactWebsite extends Struct.ComponentSchema {
     private: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    type: Schema.Attribute.Enumeration<['Main', 'Investor', 'Contact']>;
+    type: Schema.Attribute.Enumeration<
+      ['Main', 'Investor', 'Contact', 'Press', 'Internal', 'Store']
+    >;
     url: Schema.Attribute.String & Schema.Attribute.Required;
     why_private: Schema.Attribute.String;
   };
@@ -236,10 +238,6 @@ export interface PagesReasoning extends Struct.ComponentSchema {
           preset: 'defaultHtml';
         }
       >;
-    heading: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
     Source: Schema.Attribute.Component<'shared.source', true>;
   };
 }
@@ -391,6 +389,42 @@ export interface SharedSource extends Struct.ComponentSchema {
   };
 }
 
+export interface SocialShareSettings extends Struct.ComponentSchema {
+  collectionName: 'components_social_share_settings';
+  info: {
+    displayName: 'Share Settings';
+  };
+  attributes: {
+    creator_notes: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 1000;
+      }>;
+    enable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    hashtags: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    link_override: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    message: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+        minLength: 20;
+      }>;
+    message_short: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 140;
+      }>;
+    share_image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+  };
+}
+
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -450,6 +484,7 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.source': SharedSource;
+      'social.share-settings': SocialShareSettings;
       'ui.button': UiButton;
       'ui.footer-section': UiFooterSection;
       'ui.nav-item': UiNavItem;

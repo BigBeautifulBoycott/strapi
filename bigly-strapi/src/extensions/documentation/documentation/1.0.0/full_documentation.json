@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-14T23:33:07.460Z"
+    "x-generation-date": "2025-11-15T00:41:50.204Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -7797,6 +7797,9 @@
                 "ticker": {
                   "type": "string"
                 },
+                "social": {
+                  "$ref": "#/components/schemas/SocialShareSettingsComponent"
+                },
                 "Evaluation": {
                   "$ref": "#/components/schemas/SharedEvaluationComponent"
                 },
@@ -7824,10 +7827,7 @@
                   }
                 },
                 "Reasoning": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PagesReasoningComponent"
-                  }
+                  "$ref": "#/components/schemas/PagesReasoningComponent"
                 },
                 "contact": {
                   "type": "array",
@@ -8354,6 +8354,164 @@
           "structuredData": {}
         }
       },
+      "SocialShareSettingsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "share_image": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {},
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number",
+                "format": "float"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {},
+              "related": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "folder": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "folderPath": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "publishedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "createdBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "updatedBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "creator_notes": {
+            "type": "string"
+          },
+          "enable": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "message_short": {
+            "type": "string"
+          },
+          "hashtags": {
+            "type": "string"
+          },
+          "link_override": {
+            "type": "string"
+          }
+        }
+      },
       "SharedEvaluationComponent": {
         "type": "object",
         "properties": {
@@ -8505,9 +8663,6 @@
           "id": {
             "type": "number"
           },
-          "heading": {
-            "type": "string"
-          },
           "content": {
             "type": "string"
           },
@@ -8539,7 +8694,10 @@
             "enum": [
               "Main",
               "Investor",
-              "Contact"
+              "Contact",
+              "Press",
+              "Internal",
+              "Store"
             ]
           },
           "private": {
@@ -8865,6 +9023,9 @@
               "ticker": {
                 "type": "string"
               },
+              "social": {
+                "$ref": "#/components/schemas/SocialShareSettingsComponent"
+              },
               "Evaluation": {
                 "$ref": "#/components/schemas/SharedEvaluationComponent"
               },
@@ -8892,10 +9053,7 @@
                 }
               },
               "Reasoning": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PagesReasoningComponent"
-                }
+                "$ref": "#/components/schemas/PagesReasoningComponent"
               },
               "contact": {
                 "type": "array",
@@ -9688,6 +9846,9 @@
           "ticker": {
             "type": "string"
           },
+          "social": {
+            "$ref": "#/components/schemas/SocialShareSettingsComponent"
+          },
           "Evaluation": {
             "$ref": "#/components/schemas/SharedEvaluationComponent"
           },
@@ -9860,6 +10021,9 @@
                 "ticker": {
                   "type": "string"
                 },
+                "social": {
+                  "$ref": "#/components/schemas/SocialShareSettingsComponent"
+                },
                 "Evaluation": {
                   "$ref": "#/components/schemas/SharedEvaluationComponent"
                 },
@@ -9887,10 +10051,7 @@
                   }
                 },
                 "Reasoning": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PagesReasoningComponent"
-                  }
+                  "$ref": "#/components/schemas/PagesReasoningComponent"
                 },
                 "contact": {
                   "type": "array",
@@ -9985,10 +10146,7 @@
             }
           },
           "Reasoning": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PagesReasoningComponent"
-            }
+            "$ref": "#/components/schemas/PagesReasoningComponent"
           },
           "contact": {
             "type": "array",
@@ -17424,6 +17582,9 @@
                 "ticker": {
                   "type": "string"
                 },
+                "social": {
+                  "$ref": "#/components/schemas/SocialShareSettingsComponent"
+                },
                 "Evaluation": {
                   "$ref": "#/components/schemas/SharedEvaluationComponent"
                 },
@@ -17451,10 +17612,7 @@
                   }
                 },
                 "Reasoning": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PagesReasoningComponent"
-                  }
+                  "$ref": "#/components/schemas/PagesReasoningComponent"
                 },
                 "contact": {
                   "type": "array",

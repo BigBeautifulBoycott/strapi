@@ -530,9 +530,10 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
       'api::company.company'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Reasoning: Schema.Attribute.Component<'pages.reasoning', true>;
+    Reasoning: Schema.Attribute.Component<'pages.reasoning', false>;
     sector: Schema.Attribute.Relation<'manyToOne', 'api::sector.sector'>;
     slug: Schema.Attribute.UID<'name'>;
+    social: Schema.Attribute.Component<'social.share-settings', false>;
     ticker: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

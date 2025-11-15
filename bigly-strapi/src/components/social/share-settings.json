@@ -1,0 +1,96 @@
+{
+  "collectionName": "components_social_share_settings",
+  "info": {
+    "displayName": "Share Settings"
+  },
+  "options": {},
+  "attributes": {
+    "share_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "creator_notes": {
+      "type": "text",
+      "maxLength": 1000
+    },
+    "enable": {
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "enable"
+            },
+            true
+          ]
+        }
+      },
+      "maxLength": 120
+    },
+    "message": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "enable"
+            },
+            true
+          ]
+        }
+      },
+      "minLength": 20,
+      "maxLength": 300
+    },
+    "message_short": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "enable"
+            },
+            true
+          ]
+        }
+      },
+      "maxLength": 140
+    },
+    "hashtags": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "enable"
+            },
+            true
+          ]
+        }
+      },
+      "maxLength": 200
+    },
+    "link_override": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "enable"
+            },
+            true
+          ]
+        }
+      },
+      "maxLength": 300
+    }
+  },
+  "config": {}
+}
