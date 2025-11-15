@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.11.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.10.0...v1.11.0) (2025-11-15)
+
+
+### Features
+
+* faq ([9056e22](https://github.com/BigBeautifulBoycott/strapi/commit/9056e22c44664891c0f0ab96d6e047402ce8a911))
+* sort order ([fb9e69f](https://github.com/BigBeautifulBoycott/strapi/commit/fb9e69f46379d86e2bc5ef14840c1bce6b992589))
+
+
+### Bug Fixes
+
+* reasoning tags length ([43536df](https://github.com/BigBeautifulBoycott/strapi/commit/43536dfc389d1fcb8ee811333160e0fb5892632f))
+* remove icon plugin ([98fdbb6](https://github.com/BigBeautifulBoycott/strapi/commit/98fdbb6758e5f2dbece79ed78a9e8cfd1a53c8c2))
+* sector fields ([e5263b8](https://github.com/BigBeautifulBoycott/strapi/commit/e5263b84535156e42bac75ccd4865204a5f6c4e6))
+
 ## [1.10.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.9.1...v1.10.0) (2025-11-15)
 
 
