@@ -11,8 +11,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "text": {
-      "type": "richtext"
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    },
+    "signup_heading": {
+      "type": "string"
+    },
+    "signup_subheading": {
+      "type": "string"
+    },
+    "faq_heading": {
+      "type": "string"
+    },
+    "faq_subheading": {
+      "type": "string"
     }
   }
 }
