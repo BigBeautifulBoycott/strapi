@@ -821,6 +821,7 @@ export interface ApiReasoningTagReasoningTag
       ['critical', 'high', 'medium', 'low', 'info']
     >;
     publishedAt: Schema.Attribute.DateTime;
+    sortOrder: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

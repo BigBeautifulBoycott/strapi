@@ -36,6 +36,9 @@
         "low",
         "info"
       ]
+    },
+    "sortOrder": {
+      "type": "integer"
     }
   }
 }

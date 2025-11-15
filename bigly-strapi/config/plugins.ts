@@ -126,5 +126,9 @@ export default ({ env }) => ({
       // actions: { syncFrequency: '*/1 * * * *' },
     },
   },
+  // Sort Order
+  'sortable-entries': {
+    enabled: true,
+  },
 
 });
