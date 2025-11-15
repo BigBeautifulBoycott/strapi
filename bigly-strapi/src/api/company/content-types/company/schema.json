@@ -88,6 +88,12 @@
       "component": "pages.how-to",
       "repeatable": true,
       "required": false
+    },
+    "week": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::week.week",
+      "inversedBy": "companies"
     }
   }
 }

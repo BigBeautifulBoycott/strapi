@@ -40,7 +40,8 @@
     "companies": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::company.company"
+      "target": "api::company.company",
+      "mappedBy": "week"
     }
   }
 }
