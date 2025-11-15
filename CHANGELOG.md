@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.8.1...v1.9.0) (2025-11-15)
+
+
+### Features
+
+* amazeballz ([8f53e4d](https://github.com/BigBeautifulBoycott/strapi/commit/8f53e4d8b9323dacf550f7ae8d05757c2e447f4b))
+
 ## [1.8.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.8.0...v1.8.1) (2025-11-05)
 
 
