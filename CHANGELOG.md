@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/BigBeautifulBoycott/strapi/compare/v1.9.1...v1.10.0) (2025-11-15)
+
+
+### Features
+
+* social share to other content types ([7ab5dd6](https://github.com/BigBeautifulBoycott/strapi/commit/7ab5dd6765752a069fb3d849dfd093fad997ec4e))
+
 ## [1.9.1](https://github.com/BigBeautifulBoycott/strapi/compare/v1.9.0...v1.9.1) (2025-11-15)
 
 
