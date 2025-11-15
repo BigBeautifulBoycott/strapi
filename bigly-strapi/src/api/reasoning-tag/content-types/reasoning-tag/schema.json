@@ -13,8 +13,9 @@
   "attributes": {
     "name": {
       "type": "string",
-      "maxLength": 15,
-      "required": true
+      "maxLength": 20,
+      "required": true,
+      "unique": true
     },
     "about": {
       "type": "text"

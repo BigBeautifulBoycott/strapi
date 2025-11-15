@@ -814,8 +814,9 @@ export interface ApiReasoningTagReasoningTag
       Schema.Attribute.Private;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 15;
+        maxLength: 20;
       }>;
     priority: Schema.Attribute.Enumeration<
       ['critical', 'high', 'medium', 'low', 'info']
