@@ -42,6 +42,11 @@
       "relation": "oneToMany",
       "target": "api::company.company",
       "mappedBy": "week"
+    },
+    "Social": {
+      "type": "component",
+      "component": "social.share-settings",
+      "repeatable": false
     }
   }
 }

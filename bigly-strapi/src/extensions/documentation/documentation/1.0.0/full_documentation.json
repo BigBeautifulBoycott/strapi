@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-15T01:38:50.739Z"
+    "x-generation-date": "2025-11-15T02:53:32.703Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6889,6 +6889,9 @@
               "content": {
                 "type": "string"
               },
+              "Social": {
+                "$ref": "#/components/schemas/SocialShareSettingsComponent"
+              },
               "locale": {
                 "type": "string"
               },
@@ -7909,6 +7912,9 @@
                         }
                       }
                     },
+                    "Social": {
+                      "$ref": "#/components/schemas/SocialShareSettingsComponent"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -8021,6 +8027,9 @@
           },
           "content": {
             "type": "string"
+          },
+          "Social": {
+            "$ref": "#/components/schemas/SocialShareSettingsComponent"
           },
           "createdAt": {
             "type": "string",
@@ -8234,6 +8243,9 @@
                 },
                 "content": {
                   "type": "string"
+                },
+                "Social": {
+                  "$ref": "#/components/schemas/SocialShareSettingsComponent"
                 },
                 "createdAt": {
                   "type": "string",
@@ -10238,6 +10250,9 @@
                           }
                         }
                       }
+                    },
+                    "Social": {
+                      "$ref": "#/components/schemas/SocialShareSettingsComponent"
                     },
                     "createdAt": {
                       "type": "string",
@@ -13940,6 +13955,9 @@
               "content": {
                 "type": "string"
               },
+              "Social": {
+                "$ref": "#/components/schemas/SocialShareSettingsComponent"
+              },
               "locale": {
                 "type": "string"
               },
@@ -14618,6 +14636,9 @@
           "content": {
             "type": "string"
           },
+          "Social": {
+            "$ref": "#/components/schemas/SocialShareSettingsComponent"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -14806,6 +14827,9 @@
                 },
                 "content": {
                   "type": "string"
+                },
+                "Social": {
+                  "$ref": "#/components/schemas/SocialShareSettingsComponent"
                 },
                 "createdAt": {
                   "type": "string",
@@ -17011,6 +17035,9 @@
                   "example": "string or id"
                 }
               },
+              "Social": {
+                "$ref": "#/components/schemas/SocialShareSettingsComponent"
+              },
               "locale": {
                 "type": "string"
               },
@@ -17906,6 +17933,9 @@
                         }
                       }
                     },
+                    "Social": {
+                      "$ref": "#/components/schemas/SocialShareSettingsComponent"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -18012,6 +18042,9 @@
                 }
               }
             }
+          },
+          "Social": {
+            "$ref": "#/components/schemas/SocialShareSettingsComponent"
           },
           "createdAt": {
             "type": "string",

@@ -37,6 +37,11 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "Social": {
+      "type": "component",
+      "component": "social.share-settings",
+      "repeatable": false
     }
   }
 }

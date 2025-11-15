@@ -467,6 +467,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
+    Social: Schema.Attribute.Component<'social.share-settings', false>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['Big Beautiful Boycott', 'Company']> &
       Schema.Attribute.Required &
@@ -698,6 +699,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'name'>;
+    Social: Schema.Attribute.Component<'social.share-settings', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -881,6 +883,7 @@ export interface ApiWeekWeek extends Struct.CollectionTypeSchema {
     publish_date: Schema.Attribute.Date & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    Social: Schema.Attribute.Component<'social.share-settings', false>;
     summary: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;

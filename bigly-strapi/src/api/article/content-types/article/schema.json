@@ -68,6 +68,11 @@
       "options": {
         "preset": "defaultMarkdown"
       }
+    },
+    "Social": {
+      "type": "component",
+      "component": "social.share-settings",
+      "repeatable": false
     }
   }
 }
