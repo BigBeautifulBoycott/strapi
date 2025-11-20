@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_media_contacts",
+  "info": {
+    "displayName": "Media Contact"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "default": "media@bigbeautifulboycott.us"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string",
+      "default": "Big Beautiful Boycott"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

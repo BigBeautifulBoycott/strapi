@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "DOCUMENTATION",
+    "description": "",
+    "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
+    "contact": {
+      "name": "Big Beautiful Team",
+      "email": "penny@bigbeautifulboycott.us",
+      "url": "https://bigbeautifulboycott.us"
+    },
+    "license": {
+      "name": "AGPL 3.0",
+      "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
+    }
+  },
+  "x-strapi-config": {
+    "plugins": ["upload", "users-permissions"],
+    "path": "/documentation"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:1337/api",
+      "description": "Development server"
+    }
+  ],
+  "externalDocs": {
+    "description": "Find out more",
+    "url": "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

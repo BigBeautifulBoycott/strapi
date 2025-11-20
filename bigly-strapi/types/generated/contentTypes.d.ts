@@ -786,37 +786,61 @@ export interface ApiPressReleasePressRelease
     draftAndPublish: true;
   };
   attributes: {
-    Body: Schema.Attribute.RichText;
-    Boilerplate: Schema.Attribute.RichText;
-    callToAction: Schema.Attribute.RichText;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    boilerplate: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    call_to_action: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embargo: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
+    dateline_city: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Arlington'>;
+    dateline_state: Schema.Attribute.String & Schema.Attribute.DefaultTo<'VA'>;
+    embargo_until: Schema.Attribute.DateTime;
+    for_immediate_release: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
     Headline: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
-    Introduction: Schema.Attribute.String;
-    leadParagraph: Schema.Attribute.RichText;
+    lede: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::press-release.press-release'
     > &
       Schema.Attribute.Private;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    media_contact: Schema.Attribute.Component<'shared.media-contact', true>;
     public_release_at: Schema.Attribute.DateTime & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    release_to_embargo_at: Schema.Attribute.DateTime;
-    releaseCityState: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Arlington, VA'>;
-    slug: Schema.Attribute.UID<'Name'>;
+    pull_quote: Schema.Attribute.Component<'shared.quote', true>;
+    slug: Schema.Attribute.UID<'Title'>;
     Subheadline: Schema.Attribute.String;
-    supportingInfo: Schema.Attribute.RichText;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

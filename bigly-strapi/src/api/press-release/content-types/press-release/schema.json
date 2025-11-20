@@ -11,13 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "Title": {
       "type": "string",
       "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "Name"
+      "targetField": "Title"
     },
     "Headline": {
       "type": "string",
@@ -27,49 +27,72 @@
     "Subheadline": {
       "type": "string"
     },
-    "embargo": {
+    "dateline_city": {
+      "type": "string",
+      "default": "Arlington"
+    },
+    "dateline_state": {
+      "type": "string",
+      "default": "VA"
+    },
+    "for_immediate_release": {
       "type": "boolean",
-      "required": true,
-      "default": false
+      "default": true
     },
-    "public_release_at": {
-      "type": "datetime",
-      "required": true
-    },
-    "release_to_embargo_at": {
+    "embargo_until": {
       "type": "datetime",
       "conditions": {
         "visible": {
           "==": [
             {
-              "var": "embargo"
+              "var": "for_immediate_release"
             },
-            true
+            false
           ]
         }
       }
     },
-    "releaseCityState": {
-      "type": "string",
-      "default": "Arlington, VA"
+    "public_release_at": {
+      "type": "datetime",
+      "required": true
     },
-    "Introduction": {
-      "type": "string"
+    "lede": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-    "leadParagraph": {
-      "type": "richtext"
+    "body": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-    "Body": {
-      "type": "richtext"
+    "call_to_action": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-    "supportingInfo": {
-      "type": "richtext"
+    "boilerplate": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-    "callToAction": {
-      "type": "richtext"
+    "pull_quote": {
+      "type": "component",
+      "component": "shared.quote",
+      "repeatable": true
     },
-    "Boilerplate": {
-      "type": "richtext"
+    "media_contact": {
+      "type": "component",
+      "component": "shared.media-contact",
+      "repeatable": true
     }
   }
 }

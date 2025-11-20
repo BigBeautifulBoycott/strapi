@@ -9,8 +9,11 @@
     "title": {
       "type": "string"
     },
-    "body": {
+    "quote": {
       "type": "text"
+    },
+    "attribution": {
+      "type": "string"
     }
   }
 }

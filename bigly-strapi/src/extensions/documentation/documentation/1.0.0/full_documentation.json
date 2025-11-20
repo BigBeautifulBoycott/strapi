@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-20T21:09:03.288Z"
+    "x-generation-date": "2025-11-20T23:21:49.915Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -16529,14 +16529,13 @@
         "properties": {
           "data": {
             "required": [
-              "Name",
+              "Title",
               "Headline",
-              "embargo",
               "public_release_at"
             ],
             "type": "object",
             "properties": {
-              "Name": {
+              "Title": {
                 "type": "string"
               },
               "slug": {
@@ -16548,37 +16547,46 @@
               "Subheadline": {
                 "type": "string"
               },
-              "embargo": {
+              "dateline_city": {
+                "type": "string"
+              },
+              "dateline_state": {
+                "type": "string"
+              },
+              "for_immediate_release": {
                 "type": "boolean"
+              },
+              "embargo_until": {
+                "type": "string",
+                "format": "date-time"
               },
               "public_release_at": {
                 "type": "string",
                 "format": "date-time"
               },
-              "release_to_embargo_at": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "releaseCityState": {
+              "lede": {
                 "type": "string"
               },
-              "Introduction": {
+              "body": {
                 "type": "string"
               },
-              "leadParagraph": {
+              "call_to_action": {
                 "type": "string"
               },
-              "Body": {
+              "boilerplate": {
                 "type": "string"
               },
-              "supportingInfo": {
-                "type": "string"
+              "pull_quote": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedQuoteComponent"
+                }
               },
-              "callToAction": {
-                "type": "string"
-              },
-              "Boilerplate": {
-                "type": "string"
+              "media_contact": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedMediaContactComponent"
+                }
               },
               "locale": {
                 "type": "string"
@@ -16639,9 +16647,8 @@
       "PressRelease": {
         "type": "object",
         "required": [
-          "Name",
+          "Title",
           "Headline",
-          "embargo",
           "public_release_at"
         ],
         "properties": {
@@ -16651,7 +16658,7 @@
           "documentId": {
             "type": "string"
           },
-          "Name": {
+          "Title": {
             "type": "string"
           },
           "slug": {
@@ -16663,37 +16670,46 @@
           "Subheadline": {
             "type": "string"
           },
-          "embargo": {
+          "dateline_city": {
+            "type": "string"
+          },
+          "dateline_state": {
+            "type": "string"
+          },
+          "for_immediate_release": {
             "type": "boolean"
+          },
+          "embargo_until": {
+            "type": "string",
+            "format": "date-time"
           },
           "public_release_at": {
             "type": "string",
             "format": "date-time"
           },
-          "release_to_embargo_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "releaseCityState": {
+          "lede": {
             "type": "string"
           },
-          "Introduction": {
+          "body": {
             "type": "string"
           },
-          "leadParagraph": {
+          "call_to_action": {
             "type": "string"
           },
-          "Body": {
+          "boilerplate": {
             "type": "string"
           },
-          "supportingInfo": {
-            "type": "string"
+          "pull_quote": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedQuoteComponent"
+            }
           },
-          "callToAction": {
-            "type": "string"
-          },
-          "Boilerplate": {
-            "type": "string"
+          "media_contact": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedMediaContactComponent"
+            }
           },
           "createdAt": {
             "type": "string",
@@ -16995,7 +17011,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "Name": {
+                "Title": {
                   "type": "string"
                 },
                 "slug": {
@@ -17007,37 +17023,46 @@
                 "Subheadline": {
                   "type": "string"
                 },
-                "embargo": {
+                "dateline_city": {
+                  "type": "string"
+                },
+                "dateline_state": {
+                  "type": "string"
+                },
+                "for_immediate_release": {
                   "type": "boolean"
+                },
+                "embargo_until": {
+                  "type": "string",
+                  "format": "date-time"
                 },
                 "public_release_at": {
                   "type": "string",
                   "format": "date-time"
                 },
-                "release_to_embargo_at": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "releaseCityState": {
+                "lede": {
                   "type": "string"
                 },
-                "Introduction": {
+                "body": {
                   "type": "string"
                 },
-                "leadParagraph": {
+                "call_to_action": {
                   "type": "string"
                 },
-                "Body": {
+                "boilerplate": {
                   "type": "string"
                 },
-                "supportingInfo": {
-                  "type": "string"
+                "pull_quote": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SharedQuoteComponent"
+                  }
                 },
-                "callToAction": {
-                  "type": "string"
-                },
-                "Boilerplate": {
-                  "type": "string"
+                "media_contact": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SharedMediaContactComponent"
+                  }
                 },
                 "createdAt": {
                   "type": "string",
@@ -17103,6 +17128,50 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "SharedQuoteComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          }
+        }
+      },
+      "SharedMediaContactComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "organization": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           }
         }
       },

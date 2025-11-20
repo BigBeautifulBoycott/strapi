@@ -300,6 +300,24 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMediaContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media_contacts';
+  info: {
+    displayName: 'Media Contact';
+  };
+  attributes: {
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'media@bigbeautifulboycott.us'>;
+    name: Schema.Attribute.String;
+    organization: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Big Beautiful Boycott'>;
+    phone: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedPolicySection extends Struct.ComponentSchema {
   collectionName: 'components_shared_policy_sections';
   info: {
@@ -319,7 +337,8 @@ export interface SharedQuote extends Struct.ComponentSchema {
     icon: 'indent';
   };
   attributes: {
-    body: Schema.Attribute.Text;
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -478,6 +497,7 @@ declare module '@strapi/strapi' {
       'shared.evaluation': SharedEvaluation;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;
+      'shared.media-contact': SharedMediaContact;
       'shared.policy-section': SharedPolicySection;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
